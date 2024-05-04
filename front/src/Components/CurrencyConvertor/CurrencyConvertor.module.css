@@ -1,0 +1,104 @@
+.body_background {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background: #1c2541;
+  color: #ffffff;
+}
+
+.body_background:first-child {
+  margin-top: 40px;
+}
+
+.input_style,
+.dropdown_style {
+  border: 2px solid #5bc0be; /* Мятный контур, придает свежесть */
+  background-color: #2a3d66; /* Слегка светлее фона для разделения элементов */
+  padding: 8px 10px;
+  border-radius: 8px; /* Закругленные углы для современного вида */
+  color: #ffffff; /* Белый текст внутри элементов ввода */
+  transition: all 0.3s ease-in-out; /* Плавные переходы для интерактивности */
+}
+
+.dropdown_style {
+  min-width: 250px; /* Adjusted for smaller screens */
+}
+
+.input_style {
+  min-width: 210px; /* Adjusted for smaller screens */
+}
+
+.input_style:focus,
+.dropdown_style:focus {
+  outline: none; /* Убирает стандартную подсветку браузера */
+  border-color: #ff4500; /* Яркий акцент при фокусе */
+  box-shadow: 0 0 8px rgba(255, 69, 0, 0.5); /* Тень только с красным оттенком */
+}
+
+.conversion_equals {
+  margin: 0px 20px;
+}
+
+.button_style {
+  background-color: #5bc0be; /* Мятный фон для кнопок, отличается от основного */
+  color: white;
+  border-radius: 8px;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.button_style:hover {
+  background-color: #3a506b; /* Темно-серый при наведении, смягчает переход */
+}
+
+.partWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items to center for better mobile view */
+}
+
+.part_main {
+  display: flex;
+  flex-direction: column; /* Stack inputs and dropdowns vertically on smaller screens */
+}
+
+.checkboxWrapper {
+  margin-top: 10px;
+}
+
+/* Media Queries */
+@media (min-width: 992px) {
+  .part_main {
+    flex-direction: row; /* Horizontal layout for larger screens */
+  }
+
+  .dropdown_style {
+    min-width: 150px;
+  }
+
+  .input_style,
+  .dropdown_style {
+    width: 100%; /* Full width inputs and dropdowns for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .body_background {
+    flex-direction: column; /* Stack vertically on mobile */
+    padding: 20px; /* Add padding for small screens */
+    font-size: 16px;
+  }
+
+  .input_style,
+  .dropdown_style {
+    width: 100%; /* Full width for mobile screens */
+  }
+
+  .part_main {
+    flex-direction: column; /* Ensure vertical layout on smaller screens */
+  }
+
+  .dropdown_style {
+    min-width: 100%; /* Full width dropdowns on smaller screens */
+  }
+}
